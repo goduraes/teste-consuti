@@ -39,7 +39,7 @@
 </template>
 
 <script>
-  import axios from 'axios';
+  import api from '../../service/api';
   import addModal from '../shared/addModal/add.vue';
 
   export default {
@@ -69,7 +69,7 @@
 
     methods: {
       getList() {
-        axios.get('http://tst.sportibrasil.com.br/Services/CategoriaService.svc/ObterCategoriasPorEmail/gduraes10@gmail.com')
+        api.get('CategoriaService.svc/ObterCategoriasPorEmail/gduraes10@gmail.com')
           .then((response) => {
             this.items = response.data.ObterCategoriasPorEmailResult;
           })
@@ -79,7 +79,7 @@
       },
       deletar(id) {
         if (confirm("Confirma a exclusão do objeto?")) {
-          axios.delete(`http://tst.sportibrasil.com.br/Services/CategoriaService.svc/ExcluirCategoria/${id}`)
+          api.delete(`CategoriaService.svc/ExcluirCategoria/${id}`)
             .then((response) => {
               this.getList();
             })

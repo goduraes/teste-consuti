@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../../service/api';
+
 export default {
   data() {
     return {
@@ -32,7 +33,7 @@ export default {
 
   methods: {
     getItem() {
-      axios.get(`http://tst.sportibrasil.com.br/Services/CategoriaService.svc/ObterCategoriaPorCodigo/${this.$route.params.id}`)
+      api.get(`CategoriaService.svc/ObterCategoriaPorCodigo/${this.$route.params.id}`)
         .then((response) => {
           this.ID = response.data.ObterPorCodigoResult.ID;
           this.Nome = response.data.ObterPorCodigoResult.Nome;

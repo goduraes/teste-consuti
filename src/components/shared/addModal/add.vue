@@ -24,7 +24,8 @@
 </template>
 
 <script>
-import axios from 'axios';
+import api from '../../../service/api';
+
 export default {
     data() {
         return {
@@ -45,7 +46,7 @@ export default {
                 Email: "gduraes10@gmail.com"
             }
 
-            axios.post('http://tst.sportibrasil.com.br/Services/CategoriaService.svc/CadastrarCategoria', item)
+            api.post('CategoriaService.svc/CadastrarCategoria', item)
             .then((response) => {
                 alert("Item Salvo com sucesso!");
                 this.$emit('salvo');
