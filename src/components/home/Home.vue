@@ -51,7 +51,6 @@
         fields: [
           'Nome',
           { key: 'Descricao', label: 'Descrição' },
-          "Tipo",
           "Ordem",
           { key: 'nameage', label: 'Opções', class: 'text-center' }
         ],
