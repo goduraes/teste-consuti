@@ -53,7 +53,7 @@ export default {
         Email: "gduraes10@gmail.com"
       }
 
-      axios.put('http://tst.sportibrasil.com.br/Services/CategoriaService.svc/AtualizarCategoria', item)
+      api.put('http://tst.sportibrasil.com.br/Services/CategoriaService.svc/AtualizarCategoria', item)
         .then((response) => {
           alert("Item editado com sucesso!");
           this.$router.push('/');
